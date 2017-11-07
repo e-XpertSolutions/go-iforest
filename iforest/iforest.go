@@ -11,7 +11,7 @@ import (
 	"sync"
 )
 
-// Euler is an Euler's constant as descibed in algorithm specification
+// Euler is an Euler's constant as described in algorithm specification
 const Euler float64 = 0.5772156649
 
 type kv struct {
@@ -71,7 +71,7 @@ func (f *Forest) Train(X [][]float64) {
 	f.Trained = true
 }
 
-// Test is the algoritm "Evaluating Stage". It computes anomaly scores for the
+// Test is the algorithm "Evaluating Stage". It computes anomaly scores for the
 // dataset (should be used with the same set as in training) and chooses anomaly
 // score that will be the bound for detecting anomalies.
 func (f *Forest) Test(X [][]float64) error {

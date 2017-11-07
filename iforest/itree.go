@@ -26,7 +26,7 @@ type Node struct {
 }
 
 // BuildTree builds decision tree for given data, attributes and values used for
-// splits are choosen randomly
+// splits are chosen randomly
 func (t *Tree) BuildTree(X [][]float64, ids []int) error {
 	xCols := len(X[0])
 	att := findAttribute(xCols)
@@ -121,7 +121,7 @@ func PathLength(V []float64, pathLength int, node *Node) float64 {
 
 }
 
-// splitMatrix divides matrix on two parts based on choosen attribute and split
+// splitMatrix divides matrix on two parts based on chosen attribute and split
 // value
 func splitMatrix(X [][]float64, split float64, attribute int, ind []int) ([]int, []int) {
 
