@@ -15,7 +15,11 @@ To get more information about algorithm, please refer to this paper: [IFOREST](h
 
 ## Installation
 
-go get -u github.com/e-XpertSolutions/go-iforest
+Stable release can be downloaded by issuing the following command:
+
+```
+go get -u gopkg.in/e-XpertSolutions/go-iforest.v1
+```
 
 ## Usage
 
