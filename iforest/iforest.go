@@ -3,7 +3,6 @@ package iforest
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"math"
 	"math/rand"
 	"os"
@@ -40,23 +39,23 @@ type Forest struct {
 	Tested          bool
 }
 
-//NewForest initializes Forest structure.
+// NewForest initializes Forest structure.
 func NewForest(nbTrees, subsamplingSize int, anomalyRatio float64) *Forest {
 	f := &Forest{NbTrees: nbTrees, SubsamplingSize: subsamplingSize}
 	f.HeightLimit = int(math.Ceil(math.Log2(float64(subsamplingSize))))
 	f.Trees = make([]Tree, nbTrees)
 	f.AnomalyScores = make(map[int]float64)
-	//f.Random = rand.New(rand.NewSource(time.Now().UTC().UnixNano()))
 	f.AnomalyRatio = anomalyRatio
 	n := float64(subsamplingSize)
 	f.CSubSampl = computeC(n)
-	fmt.Println(f.CSubSampl)
+
 	return f
 }
 
 // Train creates the collection of trees in the forest. This is the training
 // stage of the algorithm.
 func (f *Forest) Train(X [][]float64) {
+
 	mx := make(map[int][]float64, len(X))
 	for i := 0; i < len(X); i++ {
 		mx[i] = X[i]
@@ -188,6 +187,9 @@ func (f *Forest) TestParallel(X [][]float64, routinesNumber int) error {
 			f.Labels[i] = 0
 		}
 	}
+
+	f.Tested = true
+
 	return nil
 }
 
