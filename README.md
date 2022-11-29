@@ -7,7 +7,7 @@
 [![cover.run go](https://cover.run/go/github.com/e-XpertSolutions/go-iforest/iforest.svg)](https://cover.run/go/github.com/e-XpertSolutions/go-iforest/iforest)
 
 
-GO implementation of Isolation Forest algorithm.
+Go implementation of Isolation Forest algorithm.
 
 Isolation Forest is an unsupervised learning algorithm that is able to detect anomalies (data patterns that differ from normal instances). Detection is performed by recursive data partitioning, which can be represented by a tree structure. At each iteration data is splitted using randomly chosen feature and its value (random number between maximum and minimum value of chosen feature). Due to the fact that anomalies are rare and different from other instances, smaller number of partitions is needed to isolate them. This is equivalent to the path length in created tree. Shorter path means that given instance can be an anomaly. To improve accuracy the ensemble of such trees is created and result is averaged over all trees.
 
@@ -18,7 +18,7 @@ To get more information about algorithm, please refer to this paper: [IFOREST](h
 Stable release can be downloaded by issuing the following command:
 
 ```
-go get -u gopkg.in/e-XpertSolutions/go-iforest.v1
+go get github.com/e-XpertSolutions/go-iforest/v2
 ```
 
 ## Usage
